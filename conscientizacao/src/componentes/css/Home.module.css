@@ -1,0 +1,82 @@
+.home { font-size: 1rem; }
+.home :global(.hero-wrap) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 50vw;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  min-height: 530px;
+  padding: 70px 0 70px max(8vw, 28px);
+}
+.home :global(.hero-copy) { max-width: 600px; }
+.home :global(.hero-image-slot) {
+  height: 390px;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #e9e6e0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.35s ease;
+}
+.home :global(.slide-dots) {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 8px;
+}
+.home :global(.slide-dots button) {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #ffffff80;
+  cursor: pointer;
+}
+.home :global(.slide-dots button.active) { background: #fff; }
+.home :global(.topic-card) {
+  min-height: 200px;
+  justify-content: center;
+  padding: 26px;
+  border: 1px solid #e5e1dc;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: none;
+}
+.home :global(.topic-card:hover) {
+  transform: none;
+  border-color: #211e1e;
+  box-shadow: none;
+}
+.home :global(.topic-card h3) { margin: 0 0 12px; font-size: 1.8rem; }
+.home :global(.topic-card p) { margin: 0 !important; }
+.home :global(.card-symbol),
+.home :global(.card-index),
+.home :global(.card-cta) { display: none; }
+.home :global(.hero-note) { display: none; }
+.home :global(.eyebrow) { font-size: 0.82rem !important; }
+.home :global(.hero-lede),
+.home :global(.section-heading > p),
+.home :global(.topic-card p),
+.home :global(.callout > div > p:last-child) {
+  font-size: 1rem !important;
+}
+.home :global(.primary-link),
+.home :global(.light-link) { font-size: 0.95rem; }
+.home :global(.card-index),
+.home :global(.card-cta) { font-size: 0.82rem; }
+@media (max-width: 600px) {
+  .home :global(.hero-wrap) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 55px 22px 45px;
+  }
+  .home :global(.hero-image-slot) { width: 100%; height: 270px; }
+  .home :global(.hero-copy h1) { font-size: 3.25rem; }
+  .home :global(.hero-lede),
+  .home :global(.topic-card p) { font-size: 0.94rem !important; }
+  .home :global(.card-index),
+  .home :global(.card-cta) { font-size: 0.76rem; }
+}

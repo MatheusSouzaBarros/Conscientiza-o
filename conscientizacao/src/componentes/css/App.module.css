@@ -1,0 +1,481 @@
+/* Estrutura global do aplicativo */
+.app:global(.app-shell) {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
+
+/* Cabeçalho e navegação */
+:global(.site-header) {
+	height: 82px;
+	padding: 0 max(6vw, 24px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--line);
+	background: #fff;
+	position: relative;
+	z-index: 2;
+}
+
+:global(.site-header) nav {
+	display: flex;
+	gap: 32px;
+}
+
+:global(.site-header) nav a {
+	font-size: 1rem;
+	color: #56545a;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+:global(.site-header) nav a:hover,
+:global(.site-header) nav a:global(.active) {
+	color: var(--coral);
+}
+
+/* Botões e títulos compartilhados */
+:global(.primary-link) {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 2px;
+	background: var(--ink);
+	color: #fff;
+	text-decoration: none;
+	padding: 14px 17px;
+	font-weight: 650;
+	font-size: 1rem;
+	transition: background 0.2s;
+}
+
+:global(.primary-link):hover {
+	background: var(--coral);
+}
+
+:global(.hero-copy) h1,
+:global(.detail-hero) h1,
+:global(.not-found) h1 {
+	font-family: Georgia, serif;
+	letter-spacing: -2.8px;
+	font-weight: 400;
+	color: var(--ink);
+	font-size: clamp(48px, 6.4vw, 82px);
+	line-height: 0.99;
+	margin: 0 0 26px;
+}
+
+:global(.hero-copy) h1 em {
+	color: var(--coral);
+	font-weight: 400;
+}
+
+/* Seções da página inicial */
+:global(.hero-wrap) {
+	min-height: 540px;
+	position: relative;
+	align-items: center;
+	overflow: hidden;
+	background: #f7f5f1;
+}
+
+:global(.hero-copy) {
+	position: relative;
+	z-index: 1;
+	max-width: 565px;
+}
+
+:global(.hero-lede) {
+	max-width: 455px;
+	font-size: 1rem !important;
+	line-height: 1.7 !important;
+	color: #5e5b5b;
+	margin: 0 0 28px !important;
+}
+
+:global(.section) {
+	padding: 88px max(8vw, 28px);
+}
+
+:global(.section-heading) {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 30px;
+	margin-bottom: 30px;
+}
+
+:global(.section-heading) h2,
+:global(.callout) h2 {
+	font: 400 clamp(30px, 3.2vw, 42px) / 1.08 Georgia, serif;
+	letter-spacing: -1px;
+	color: var(--ink);
+	margin: 0;
+}
+
+:global(.section-heading) > p {
+	max-width: 340px;
+	font-size: 1rem !important;
+	line-height: 1.65 !important;
+	color: #706c6b;
+	margin: 0 !important;
+}
+
+/* Cartões dos temas */
+:global(.topic-grid) {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 14px;
+}
+
+:global(.topic-card) {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: var(--ink);
+	overflow: hidden;
+}
+
+/* Chamada de apoio e rodapé */
+:global(.callout) {
+	background: var(--ink);
+	color: #fff;
+	padding: 44px max(8vw, 28px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+:global(.callout) h2 {
+	color: #fff;
+	max-width: 570px;
+}
+
+:global(.light-link) {
+	white-space: nowrap;
+	background: #f3b59f;
+	color: #221d1c;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 750;
+	padding: 14px 16px;
+}
+
+:global(.site-footer) {
+	color: #777;
+}
+
+/* Páginas dos temas e canais de apoio */
+:global(.detail-page) {
+	width: min(100% - 48px, 1000px);
+	margin: 0 auto;
+	padding: 36px 0 70px;
+}
+
+:global(.back-link) {
+	font-size: 1rem;
+	color: #625e5f;
+	text-decoration: none;
+}
+
+:global(.back-link):hover,
+:global(.text-link):hover {
+	color: var(--coral);
+}
+
+:global(.detail-hero) {
+	position: relative;
+	padding: 60px 5vw 48px;
+	background: #f7f5f1;
+	margin: 24px 0 18px;
+}
+
+:global(.detail-number) {
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	color: #898381;
+}
+
+:global(.detail-hero) > p:last-child {
+	max-width: 740px;
+	color: #5d5959;
+	font-size: 1rem !important;
+	line-height: 1.8 !important;
+}
+
+:global(.detail-grid) {
+	display: grid;
+	grid-template-columns: 1fr 1.2fr;
+	gap: 18px;
+}
+
+:global(.stat-panel),
+:global(.law-panel) {
+	padding: 27px 28px;
+	border: 1px solid var(--line);
+}
+
+:global(.stat-panel) {
+	background: #f3ded5;
+	border: 0;
+}
+
+:global(.stat-panel) h2,
+:global(.law-panel) h2 {
+	font: 400 28px / 1.12 Georgia, serif;
+	letter-spacing: -0.5px;
+	margin: 0 0 17px;
+	color: var(--ink);
+}
+
+:global(.stat-panel) > p:not(:global(.eyebrow)),
+:global(.law-panel) li {
+	font-size: 1rem !important;
+	line-height: 1.65 !important;
+	color: #555152;
+}
+
+:global(.stat-panel) small {
+	display: block;
+	border-top: 1px solid #a982743d;
+	padding-top: 14px;
+	margin-top: 25px;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	color: #716765;
+}
+
+:global(.law-panel) ul {
+	padding-left: 18px;
+	margin: 0 0 20px;
+}
+
+:global(.law-panel) li {
+	padding: 0 0 11px 3px;
+}
+
+:global(.law-panel) li::marker {
+	color: var(--coral);
+}
+
+:global(.text-link) {
+	font-size: 1rem;
+	font-weight: 750;
+	color: var(--ink);
+	text-decoration: none;
+}
+
+:global(.legal-note) {
+	font-size: 0.85rem !important;
+	line-height: 1.55 !important;
+	color: #858081;
+	border-top: 1px solid var(--line);
+	padding-top: 12px;
+	margin: 16px 0 0 !important;
+}
+
+:global(.help-strip) {
+	margin-top: 18px;
+	padding: 18px 20px;
+	background: #f2efea;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+	color: #575353;
+}
+
+:global(.help-strip) a {
+	font-weight: 750;
+	color: #9b4d3e;
+	text-decoration: none;
+}
+
+:global(.not-found) {
+	min-height: 55vh;
+	padding: 100px 10vw;
+}
+
+:global(.support-page) :global(.detail-hero) {
+	padding: 55px 5vw;
+}
+
+:global(.support-grid) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+:global(.support-card) {
+	padding: 24px;
+	min-height: 220px;
+	display: flex;
+	flex-direction: column;
+}
+
+:global(.support-card) > span {
+	font-size: 0.9rem;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: #655d5e;
+}
+
+:global(.support-card) h2 {
+	font: 400 30px Georgia, serif;
+	margin: 18px 0 10px;
+	color: var(--ink);
+}
+
+:global(.support-card) p {
+	font-size: 1rem !important;
+	line-height: 1.65 !important;
+	color: #565152;
+	margin: 0 0 14px !important;
+}
+
+:global(.support-card) a,
+:global(.support-no-link) {
+	margin-top: auto;
+	color: #2b2626;
+	font-size: 0.95rem;
+	font-weight: 750;
+	text-decoration: none;
+}
+
+:global(.support-card) a:hover {
+	text-decoration: underline;
+}
+
+:global(.support-purple) { background: #e6d9ee; }
+:global(.support-green) { background: #d6e7df; }
+:global(.support-orange) { background: #f4dfd5; }
+:global(.support-blue) { background: #dce6ec; }
+
+@media (max-width: 850px) {
+	:global(.topic-grid) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	:global(.section) {
+		padding-top: 65px;
+		padding-bottom: 65px;
+	}
+}
+
+@media (max-width: 600px) {
+	:global(.site-header) {
+		height: 70px;
+		padding: 0 20px;
+	}
+
+	:global(.site-header) nav {
+		gap: 17px;
+	}
+
+	:global(.site-header) nav a {
+		font-size: 0.9rem;
+	}
+
+	:global(.section) {
+		padding: 58px 20px;
+	}
+
+	:global(.section-heading) {
+		display: block;
+	}
+
+	:global(.section-heading) > p {
+		margin-top: 14px !important;
+	}
+
+	:global(.section-heading) h2 {
+		font-size: 34px;
+	}
+
+	:global(.topic-grid) {
+		gap: 10px;
+	}
+
+	:global(.callout) {
+		padding: 34px 22px;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	:global(.callout) h2 {
+		font-size: 33px;
+	}
+
+	:global(.detail-page) {
+		width: calc(100% - 32px);
+		padding: 25px 0 50px;
+	}
+
+	:global(.detail-hero) {
+		padding: 48px 22px 28px;
+		margin-top: 20px;
+	}
+
+	:global(.detail-number) {
+		right: 17px;
+		top: 18px;
+	}
+
+	:global(.detail-hero) h1 {
+		font-size: 55px;
+		letter-spacing: -2px;
+	}
+
+	:global(.detail-grid),
+	:global(.support-grid) {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+
+	:global(.stat-panel),
+	:global(.law-panel) {
+		padding: 22px;
+	}
+
+	:global(.stat-panel) h2,
+	:global(.law-panel) h2 {
+		font-size: 26px;
+	}
+
+	:global(.help-strip) {
+		align-items: flex-start;
+		gap: 12px;
+		flex-direction: column;
+	}
+
+	:global(.support-page) :global(.detail-hero) {
+		padding: 46px 22px 28px;
+	}
+
+	:global(.support-card) {
+		min-height: 195px;
+	}
+
+	:global(.not-found) {
+		padding: 85px 25px;
+	}
+
+	:global(.not-found) h1 {
+		font-size: 45px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:global(html) {
+		scroll-behavior: auto !important;
+	}
+}

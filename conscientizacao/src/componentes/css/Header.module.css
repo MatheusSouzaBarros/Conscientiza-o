@@ -1,0 +1,26 @@
+.header {
+	font-size: 1rem;
+}
+
+.header :global(.brand) {
+	color: #211e1e;
+	font-family: Georgia, serif;
+	font-size: clamp(1.45rem, 2vw, 1.8rem);
+	font-weight: 700;
+	letter-spacing: -0.06em;
+	text-decoration: none;
+}
+
+.header :global(nav a) {
+	font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+	.header :global(.brand) {
+		font-size: 1.35rem;
+	}
+
+	.header :global(nav a) {
+		font-size: 0.9rem;
+	}
+}

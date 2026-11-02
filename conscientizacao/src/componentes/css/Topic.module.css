@@ -1,0 +1,17 @@
+.page { font-size: 1rem; }
+.page :global(.back-link),
+.page :global(.text-link),
+.page :global(.help-strip) { font-size: 0.95rem; }
+.page :global(.detail-number) { font-size: 0.8rem; }
+.page :global(.detail-hero > p:last-child),
+.page :global(.stat-panel > p:not(.eyebrow)),
+.page :global(.law-panel li) {
+  font-size: 1rem !important;
+}
+.page :global(.stat-panel small),
+.page :global(.legal-note) { font-size: 0.82rem !important; }
+@media (max-width: 600px) {
+  .page :global(.detail-hero > p:last-child),
+  .page :global(.stat-panel > p:not(.eyebrow)),
+  .page :global(.law-panel li) { font-size: 0.95rem !important; }
+}

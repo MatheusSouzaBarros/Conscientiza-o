@@ -1,0 +1,64 @@
+.footer:global(.site-footer) {
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding: 2rem max(8vw, 28px) 1.2rem;
+  background: #f4f2ed;
+  border-top: 1px solid #e7e2dc;
+}
+.footer :global(.footer-message) {
+	max-width: 390px;
+}
+.footer :global(.footer-brand) {
+	color: #211e1e;
+	font-family: Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	letter-spacing: -0.05em;
+	text-decoration: none;
+}
+.footer :global(.footer-message p) {
+	margin: 8px 0 !important;
+	color: #5e5955;
+	font-size: 0.92rem !important;
+	line-height: 1.5 !important;
+}
+.footer :global(.footer-sticker) {
+ 	display: inline-block;
+	padding: 4px 9px;
+	transform: rotate(-2deg);
+	background: #f1dfa0;
+	color: #5f5536;
+	font: italic 0.78rem Georgia, serif;
+}
+.footer :global(.footer-links) {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+.footer :global(.footer-links a),
+.footer :global(.footer-links span) {
+	color: #5e5955;
+	font-size: 0.88rem;
+	text-decoration: none;
+}
+.footer :global(.footer-links a:hover) {
+	color: #9b4d3e;
+	text-decoration: underline;
+}
+.footer :global(small) {
+ 	width: 100%;
+	padding-top: 12px;
+	border-top: 1px solid #dfdcd8;
+	color: #77716e;
+	font-size: 1rem;
+}
+@media (max-width: 600px) {
+	.footer:global(.site-footer) {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}
