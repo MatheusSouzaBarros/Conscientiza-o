@@ -1,15 +1,21 @@
 .home { font-size: 1rem; }
 .home :global(.hero-wrap) {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 50vw;
-  align-items: center;
-  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
   min-height: 530px;
-  padding: 70px 0 70px max(8vw, 28px);
+  padding: 0 0 0 max(8vw, 28px);
 }
-.home :global(.hero-copy) { max-width: 600px; }
+.home :global(.hero-copy) {
+  max-width: 600px;
+  align-self: center;
+  padding: 50px 30px 50px 0;
+}
 .home :global(.hero-image-slot) {
-  height: 390px;
+  height: 100%;
+  min-height: 530px;
+  width: 100%;
   min-width: 0;
   position: relative;
   overflow: hidden;
@@ -17,7 +23,6 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: background-image 0.35s ease;
 }
 .home :global(.slide-dots) {
   position: absolute;
@@ -27,15 +32,19 @@
   gap: 8px;
 }
 .home :global(.slide-dots button) {
-  width: 11px;
-  height: 11px;
+  width: 14px;
+  height: 14px;
   padding: 0;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   border-radius: 50%;
-  background: #ffffff80;
+  background: var(--coral);
   cursor: pointer;
+  box-shadow: 0 1px 5px #211e1e80;
 }
-.home :global(.slide-dots button.active) { background: #fff; }
+.home :global(.slide-dots button.active) {
+  background: #211e1e;
+  transform: scale(1.15);
+}
 .home :global(.topic-card) {
   min-height: 200px;
   justify-content: center;
@@ -52,10 +61,6 @@
 }
 .home :global(.topic-card h3) { margin: 0 0 12px; font-size: 1.8rem; }
 .home :global(.topic-card p) { margin: 0 !important; }
-.home :global(.card-symbol),
-.home :global(.card-index),
-.home :global(.card-cta) { display: none; }
-.home :global(.hero-note) { display: none; }
 .home :global(.eyebrow) { font-size: 0.82rem !important; }
 .home :global(.hero-lede),
 .home :global(.section-heading > p),
@@ -65,18 +70,15 @@
 }
 .home :global(.primary-link),
 .home :global(.light-link) { font-size: 0.95rem; }
-.home :global(.card-index),
-.home :global(.card-cta) { font-size: 0.82rem; }
 @media (max-width: 600px) {
   .home :global(.hero-wrap) {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 55px 22px 45px;
   }
-  .home :global(.hero-image-slot) { width: 100%; height: 270px; }
+  .home :global(.hero-copy) { padding: 0; }
+  .home :global(.hero-image-slot) { width: 100%; height: 270px; min-height: 270px; }
   .home :global(.hero-copy h1) { font-size: 3.25rem; }
   .home :global(.hero-lede),
   .home :global(.topic-card p) { font-size: 0.94rem !important; }
-  .home :global(.card-index),
-  .home :global(.card-cta) { font-size: 0.76rem; }
 }

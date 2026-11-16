@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import styles from './css/Home.module.css'
+import misoginiaImage from '../assets/imagens/contraMisoginia.jpg'
+import transfobiaImage from '../assets/imagens/contraTransfobia.jpg'
+import homofobiaImage from '../assets/imagens/contraHomofobia.jpg'
+import racismoImage from '../assets/imagens/contraRacismo.jpg'
 
 const heroSlides = [
-  { image: '/images/misoginia.jpg', label: '' },
-  { image: '/images/transfobia.jpg', label: '' },
-  { image: '/images/homofobia.jpg', label: '' },
-  { image: '/images/racismo.jpg', label: '' },
+  { image: misoginiaImage, label: 'Misoginia' },
+  { image: transfobiaImage, label: 'Transfobia' },
+  { image: homofobiaImage, label: 'Homofobia' },
+  { image: racismoImage, label: 'Racismo' },
 ]
 
 export default function Home() {
